@@ -22,17 +22,16 @@ function displayBooks() {
     const card = document.createElement("div");
     card.classList.add("card");
     card.style.cssText =
-      "display: flex; flex-direction: column; gap: 1rem; border-radius: 1rem; background-color: lightblue; padding: 1rem; width: 13rem";
+      "display: flex; flex-direction: column; gap: 1rem; border-radius: 1rem; background-color: lightblue; padding: 1rem; width: 13rem; border: 2px solid rgba(7, 59, 119, 0.7)";
 
     subpage.appendChild(card);
 
     const ttle = document.createElement("h3");
     ttle.textContent = myLibrary[i].title;
-    ttle.style.cssText = "color: black";
     const auth = document.createElement("p");
-    auth.textContent = myLibrary[i].author;
+    auth.textContent = `Authored by: ${myLibrary[i].author}`;
     const bPages = document.createElement("p");
-    bPages.textContent = myLibrary[i].pages;
+    bPages.textContent = `Pages: ${myLibrary[i].pages}`;
 
     card.appendChild(ttle);
     card.appendChild(auth);
@@ -42,7 +41,7 @@ function displayBooks() {
 
 const addBtn = document.createElement("button");
 addBtn.style.cssText = [
-  "padding: 1rem 1.5rem; color: white; font-weight: bold; background-color: blue; border: 0px; border-radius: 2rem; width: 7rem"
+  "padding: 1rem 1.5rem; color: white; font-weight: bold; background-color: rgba(7, 59, 119, 0.7); border: 0px; border-radius: 2rem; width: 7rem; backdrop-filter: blur(20px)"
 ];
 addBtn.textContent = "Add Book";
 
