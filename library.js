@@ -1,4 +1,11 @@
 const myLibrary = [];
+const page = document.querySelector(".container");
+page.style.cssText = "display: flex; flex-direction: column; gap: 1rem";
+
+const subpage = document.createElement("div");
+subpage.style.cssText = "display: flex; gap: 1rem";
+
+page.appendChild(subpage);
 
 function Book(title, author, pages) {
   this.title = title;
@@ -9,14 +16,6 @@ function Book(title, author, pages) {
 function addBookToLibrary(book) {
   myLibrary.push(book);
 }
-
-const page = document.querySelector(".container");
-page.style.cssText = "display: flex; flex-direction: column; gap: 1rem";
-
-const subpage = document.createElement("div");
-subpage.style.cssText = "display: flex; gap: 1rem";
-
-page.appendChild(subpage);
 
 function displayBooks() {
   for (let i = 0; i < myLibrary.length; i++) {
