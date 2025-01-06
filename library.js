@@ -18,7 +18,7 @@ addBtn.textContent = "Add Book";
 const revBtn = document.createElement("button");
 revBtn.classList.add('remove-lib');
 revBtn.style.cssText = [
-  "padding: 1rem 1.5rem; color: white; font-weight: bold; border: 2px solid rgba(7, 59, 119, 0.7); background-color: rgba(7, 59, 119, 0.1); border-radius: 2rem; width: 10rem; backdrop-filter: blur(20px)"
+  "padding: 1rem 1.5rem; color: rgba(7, 59, 119, 0.7); font-weight: bold; border: 2px solid rgba(7, 59, 119, 0.7); background-color: rgba(7, 59, 119, 0.1); border-radius: 2rem; width: 10rem; backdrop-filter: blur(20px)"
 ];
 revBtn.textContent = "Remove Book";
 
@@ -45,7 +45,7 @@ function displayBooks() {
     const card = document.createElement("div");
     card.classList.add("card");
     card.style.cssText =
-      "display: flex; flex-direction: column; gap: 1rem; border-radius: 1rem; background-color: lightblue; padding: 1rem; width: 13rem; border: 2px solid rgba(7, 59, 119, 0.7)";
+      "display: flex; flex-direction: column; gap: 1rem; border-radius: 1rem; background-color: lightblue; padding: 1rem; width: 20rem; border: 2px solid rgba(7, 59, 119, 0.7)";
 
     subpage.appendChild(card);
 
