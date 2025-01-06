@@ -2,6 +2,29 @@ const myLibrary = [];
 const page = document.querySelector(".container");
 page.style.cssText = "display: flex; flex-direction: column; gap: 1rem";
 
+const btnCtn = document.createElement('div');
+btnCtn.classList.add('btn-ctn');
+btnCtn.style.cssText = 'display: flex; gap: 1rem';
+
+page.appendChild(btnCtn);
+
+const addBtn = document.createElement("button");
+addBtn.classList.add('add-lib');
+addBtn.style.cssText = [
+  "padding: 1rem 1.5rem; color: white; font-weight: bold; background-color: rgba(7, 59, 119, 0.7); border: 0px; border-radius: 2rem; width: 7rem; backdrop-filter: blur(20px)"
+];
+addBtn.textContent = "Add Book";
+
+const revBtn = document.createElement("button");
+revBtn.classList.add('remove-lib');
+revBtn.style.cssText = [
+  "padding: 1rem 1.5rem; color: white; font-weight: bold; border: 2px solid rgba(7, 59, 119, 0.7); background-color: rgba(7, 59, 119, 0.1); border-radius: 2rem; width: 10rem; backdrop-filter: blur(20px)"
+];
+revBtn.textContent = "Remove Book";
+
+btnCtn.appendChild(addBtn);
+btnCtn.appendChild(revBtn);
+
 const subpage = document.createElement("div");
 subpage.style.cssText = "display: flex; gap: 1rem";
 
@@ -38,14 +61,6 @@ function displayBooks() {
     card.appendChild(bPages);
   }
 }
-
-const addBtn = document.createElement("button");
-addBtn.style.cssText = [
-  "padding: 1rem 1.5rem; color: white; font-weight: bold; background-color: rgba(7, 59, 119, 0.7); border: 0px; border-radius: 2rem; width: 7rem; backdrop-filter: blur(20px)"
-];
-addBtn.textContent = "Add Book";
-
-page.appendChild(addBtn);
 
 const book1 = new Book("Slated", "Teri Terry", 800);
 
