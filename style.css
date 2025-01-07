@@ -114,10 +114,20 @@ button:hover {
     padding: 1rem;
     border-radius: 1.5rem;
     padding: 2rem;
-    display: none;
+    display: flex;
+    pointer-events: none;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    opacity: 0;
+    transform: translateY(-20px); /* Start slightly above */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.form-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
 #fancy-form {
@@ -152,7 +162,8 @@ button:hover {
     align-items: center;
 }
 
-.form-btn {
+.form-btn,
+.close-form {
     height: 2rem;
     padding: 0.2rem 1rem;
     border-radius: 0.5rem;
@@ -162,7 +173,8 @@ button:hover {
     background-color: rgb(7, 59, 119);
 }
 
-.form-btn:active {
+.form-btn:active,
+.close-form:active {
     background-color: aqua;
     color: black;
 }
