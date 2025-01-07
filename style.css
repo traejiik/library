@@ -51,19 +51,30 @@ body {
   background-color: rgba(7, 59, 119, 0.7);
   border: 0px;
   border-radius: 2rem;
-  width: 7rem;
+  width: 20rem;
   backdrop-filter: blur(20px);
 }
 
-.remove-lib {
+.remove-lib,
+.read-toggle {
   padding: 1rem 1.5rem;
-  color: rgba(7, 59, 119, 0.7);
+  color: white;
   font-weight: bold;
-  border: 2px solid rgba(7, 59, 119, 0.7);
-  background-color: rgba(7, 59, 119, 0.1);
+  border: 1px solid rgba(2, 11, 71, 0.5);
+  background-color: rgba(2, 11, 71, 0.5);
   border-radius: 2rem;
   width: 10rem;
   backdrop-filter: blur(20px);
+}
+
+.add-lib:active,
+.remove-lib:active,
+.read-toggle:active {
+    opacity: 0.7;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .disp-area {
@@ -78,7 +89,14 @@ body {
   gap: 1rem;
   border-radius: 1rem;
   padding: 1rem;
-  width: 20rem;
+  width: 15rem;
+}
+
+.card-btn-ctn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
 }
 
 .form-ctn {
