@@ -3,10 +3,31 @@ const page = document.querySelector(".container");
 const btnCtn = document.querySelector('.btn-ctn');
 const subpage = document.querySelector(".disp-area");
 
-function Book(title, author, pages) {
+const addBtn = document.createElement("button");
+addBtn.classList.add('add-lib');
+addBtn.textContent = "Add Book";
+
+const revBtn = document.createElement("button");
+revBtn.classList.add('remove-lib');
+revBtn.textContent = "Remove Book";
+
+const togRead = document.createElement("button");
+togRead.classList.add('read-toggle');
+togRead.textContent = "Read/Unread"
+
+btnCtn.appendChild(addBtn);
+
+function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
+  this.read = function() {
+    if (read === true) {
+        return "Yes";     
+    } else {
+        return "No";
+    };
+  };
 };
 
 function addBookToLibrary(book) {
@@ -23,28 +44,34 @@ function displayBooks() {
     const ttle = document.createElement("h3");
     ttle.textContent = myLibrary[i].title;
     const auth = document.createElement("p");
-    auth.textContent = `Authored by: ${myLibrary[i].author}`;
+    auth.textContent = myLibrary[i].author;
     const bPages = document.createElement("p");
-    bPages.textContent = `Pages: ${myLibrary[i].pages}`;
+    bPages.textContent = `${myLibrary[i].pages} pages`;
+
+    const cbc = document.createElement("div");
+    cbc.classList.add("card-btn-ctn");
 
     card.appendChild(ttle);
     card.appendChild(auth);
     card.appendChild(bPages);
+    card.appendChild(cbc);
+
+    cbc.appendChild(revBtn);
+    cbc.appendChild(togRead)
   };
 };
 
-const addBtn = document.createElement("button");
-addBtn.classList.add('add-lib');
-addBtn.textContent = "Add Book";
-
-const revBtn = document.createElement("button");
-revBtn.classList.add('remove-lib');
-revBtn.textContent = "Remove Book";
-
-btnCtn.appendChild(addBtn);
-btnCtn.appendChild(revBtn);
-
 const book1 = new Book("Slated", "Teri Terry", 800);
+const inBook = document.querySelector('.form-ctn');
+const frmBtn = document.querySelector('.form-btn');
+
+addBtn.addEventListener('click', () => {
+    inBook.style.cssText = 'display: flex';
+});
+
+frmBtn.addEventListener('click', () => {
+
+});
 
 addBookToLibrary(book1);
 displayBooks();
