@@ -64,13 +64,19 @@ function displayBooks() {
 const book1 = new Book("Slated", "Teri Terry", 800);
 const inBook = document.querySelector('.form-ctn');
 const frmBtn = document.querySelector('.form-btn');
+const closerBtn = document.querySelector('.close-form');
 
 addBtn.addEventListener('click', () => {
-    inBook.style.cssText = 'display: flex';
+    inBook.classList.add('form-visible');
 });
 
-frmBtn.addEventListener('click', () => {
+frmBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+});
 
+closerBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    inBook.classList.remove('form-visible');
 });
 
 addBookToLibrary(book1);
