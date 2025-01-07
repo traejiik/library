@@ -83,16 +83,65 @@ body {
 
 .form-ctn {
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 25%;
     right: 25%;
     z-index: 3;
     background-color: rgba(2, 11, 71, 0.6);
     backdrop-filter: blur(20px);
+    color: white;
     padding: 1rem;
     border-radius: 1.5rem;
     padding: 2rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
+}
+
+#fancy-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 70%;
+}
+
+.form-field > label {
+    font-weight: 500;
+    font-family: "Outfit";
+}
+
+.form-field > input {
+    height: 2rem;
+    border-radius: 0.6rem;
+    border: 2px solid rgb(7, 59, 119);
+    padding-left: 0.5rem;
+    color: black;   
+}
+
+.checkbox {
+    align-items: center;
+}
+
+.form-btn {
+    height: 2rem;
+    padding: 0.2rem 1rem;
+    border-radius: 0.5rem;
+    border: 0;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(7, 59, 119);
+}
+
+.form-btn:active {
+    background-color: aqua;
+    color: black;
 }
