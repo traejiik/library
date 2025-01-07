@@ -20,6 +20,16 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+    displayBooks();
+}
+
+function toggleReadStatus(index) {
+    myLibrary[index].read = myLibrary[index].read === "Yes" ? "No" : "Yes";
+    displayBooks();
+}
+
 function displayBooks() {
   subpage.innerHTML = "";
   for (let i = 0; i < myLibrary.length; i++) {
@@ -56,16 +66,26 @@ function displayBooks() {
 
     cbc.appendChild(togRead);
     cbc.appendChild(revBtn);
+
+    revBtn.addEventListener('click', () => {
+        removeBook(i);
+    });
+
+    togRead.addEventListener('click', () => {
+        toggleReadStatus(i);
+    });
   }
 }
 
-// const book1 = new Book("Slated", "Teri Terry", 800);
 const inBook = document.querySelector(".form-ctn");
 const form = document.querySelector("#fancy-form");
 const closerBtn = document.querySelector(".close-form");
 
 addBtn.addEventListener("click", () => {
   inBook.classList.add("form-visible");
+  const title = document.querySelector("#title");
+
+  title.focus();
 });
 
 form.addEventListener("submit", (e) => {
