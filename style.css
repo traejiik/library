@@ -20,6 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  z-index: 1;
 }
 
 .header {
@@ -85,7 +86,10 @@ body {
     top: 40%;
     left: 25%;
     right: 25%;
-    background-color: aquamarine;
+    z-index: 3;
+    background-color: rgba(2, 11, 71, 0.6);
+    backdrop-filter: blur(20px);
+    padding: 1rem;
     border-radius: 1.5rem;
     padding: 2rem;
     display: flex;
