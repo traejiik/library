@@ -88,8 +88,8 @@ addBtn.addEventListener("click", () => {
   title.focus();
 });
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
 
   const title = document.querySelector("#title").value;
   const author = document.querySelector("#author").value;
