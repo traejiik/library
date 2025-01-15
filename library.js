@@ -9,11 +9,13 @@ addBtn.textContent = "Add Book";
 
 btnCtn.appendChild(addBtn);
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read ? "Yes" : "No";
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read ? "Yes" : "No";
+  }
 }
 
 function addBookToLibrary(book) {
@@ -21,13 +23,13 @@ function addBookToLibrary(book) {
 }
 
 function removeBook(index) {
-    myLibrary.splice(index, 1);
-    displayBooks();
+  myLibrary.splice(index, 1);
+  displayBooks();
 }
 
 function toggleReadStatus(index) {
-    myLibrary[index].read = myLibrary[index].read === "Yes" ? "No" : "Yes";
-    displayBooks();
+  myLibrary[index].read = myLibrary[index].read === "Yes" ? "No" : "Yes";
+  displayBooks();
 }
 
 function displayBooks() {
@@ -68,11 +70,11 @@ function displayBooks() {
     cbc.appendChild(revBtn);
 
     revBtn.addEventListener('click', () => {
-        removeBook(i);
+      removeBook(i);
     });
 
     togRead.addEventListener('click', () => {
-        toggleReadStatus(i);
+      toggleReadStatus(i);
     });
   }
 }
